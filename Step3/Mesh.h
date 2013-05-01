@@ -47,11 +47,15 @@ private:
     MATRIX;
 
 	GLuint shaderTexture[1];
+	float red;
+	float green;
+	float blue;
 public:
 	void AddFlatQuad(int a, int b, int c, int d, int n);
 	void AddQuad(int a, int b, int c, int d);
 	void ComputeSmoothNormals(void);
 	void LoadOBJ(const char * filename);
 	void RotateVector(MATRIX &M, CGrVector &v, CGrVector &d);
+	void SetShaderColor(float r, float g, float b) {red = r; green = g; blue = b;}
 };
 

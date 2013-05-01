@@ -84,6 +84,9 @@ CTorus::CTorus(void)
     m_steps2 = 20;
 
     m_texture = NULL;
+	red = 1.0f;
+	green = 1.0f;
+	blue = 1.0f;
 }
 
 
@@ -124,7 +127,7 @@ void CTorus::Draw()
 	glEnable(GL_TEXTURE_1D);
 	glBindTexture(GL_TEXTURE_1D, shaderTexture[0]);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(red, green, blue);
 
     // How large are the angular steps in radians
     const double step1r = 2. * GR_PI / m_steps1;

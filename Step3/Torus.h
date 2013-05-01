@@ -51,6 +51,7 @@ public:
 
 	void SetTexture(CGrTexture *texture) {m_texture = texture;}
 	CGrTexture *GetTexture() {return m_texture;}
+	void SetShaderColor(float r, float g, float b) {red = r; green = g; blue = b;}
 
 private:
     void TorusVertex(double a1, double r1, double a2, double r2, 
@@ -71,5 +72,9 @@ private:
     double  m_steps2;
 
 	CGrTexture *m_texture;  // Texture to use for the torus
+
+	float red;
+	float green;
+	float blue;
 };
 

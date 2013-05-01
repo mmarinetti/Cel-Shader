@@ -17,6 +17,9 @@ CGrVector lightAngle;
 CMesh::CMesh(void)
 {
 	m_texture = NULL;
+	red = 1.0f;
+	green = 1.0f;
+	blue = 1.0f;
 }
 
 
@@ -73,7 +76,7 @@ void CMesh::Draw(void)
 	glEnable(GL_TEXTURE_1D);
 	glBindTexture(GL_TEXTURE_1D, shaderTexture[0]);
 
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(red, green, blue);
 
 	glBegin(GL_TRIANGLES);
 	for(PTV v=m_triangles.begin(); v!=m_triangles.end(); v++)
@@ -101,7 +104,7 @@ void CMesh::Draw(void)
 	glDisable(GL_TEXTURE_1D);
 
 	//Outline code
-	/*glEnable(GL_BLEND);
+	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glPolygonMode(GL_BACK, GL_LINE);
@@ -109,7 +112,7 @@ void CMesh::Draw(void)
 
 	glCullFace(GL_FRONT);
 	glDepthFunc(GL_LEQUAL);
-	float outlineColor[3] = {0.0f, 0.0f, 0.0f};
+	float outlineColor[3] = {0.0f, 0.0f, 1.0f};
 	glColor3fv(&outlineColor[0]);
 
 	glBegin(GL_TRIANGLES);
@@ -122,7 +125,7 @@ void CMesh::Draw(void)
 	glDepthFunc(GL_LESS);
 	glCullFace(GL_BACK);
 	glPolygonMode(GL_BACK, GL_FILL);
-	glDisable(GL_BLEND);*/
+	glDisable(GL_BLEND);
 }
 
 
